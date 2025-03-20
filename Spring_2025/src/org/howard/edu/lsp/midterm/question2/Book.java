@@ -48,17 +48,22 @@ public class Book {
 	}
 	
 	/**
-	 * This method compares the author and ISBN of two books to see if they are equal
+	 * This method takes an object and compares the author and ISBN if the passed object is a Book
 	 * 
 	 * @param b is the book object that the caller is being compared to
 	 * @return True if the books have the same ISBN and author, and false otherwise
+	 * @return False if object passes is not a Book object
 	 */
-	public boolean equals(Object b) {
-		if (this.author.equals(b.author) && this.isbn.equals(b.isbn)) {
-			return true;
-		}
-		return false;
-	}
+	public boolean equals(Object obj) { // https://www.geeksforgeeks.org/overriding-equals-method-in-java/
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Book)) {
+            return false;
+        }
+        Book other = (Book) obj;
+        return (this.author.equals(other.author) && this.isbn.equals(other.isbn));
+    }
 	
 	/**
 	 * This method returns a String representation of 
