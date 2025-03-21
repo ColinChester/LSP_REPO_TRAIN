@@ -25,6 +25,11 @@ public class Music implements Streamable {
 		
 	}
 	
+	/**
+	 * This method adds a Music object to a playlist
+	 * 
+	 * @param playlistName is the name of the playlist
+	 */
 	public void addToPlaylist(String playlistName) {
 		System.out.println("Added " + title + " to " + playlistName + " playlist.");
 	}
