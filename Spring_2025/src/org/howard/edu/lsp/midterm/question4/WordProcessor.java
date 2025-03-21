@@ -9,6 +9,11 @@ public class WordProcessor {
 		this.sentence = sentence;
 	}
 	
+	/**
+	 * This method sorts through a string and returns the longest string(s)
+	 * 
+	 * @return lWords is a string array containing the longest occurring string(s) surrounded by whitespace
+	 */
 	public List<String> findLongestWords(){
 		List<String> lWords = new ArrayList<>();
 		int maxLength = 0;
