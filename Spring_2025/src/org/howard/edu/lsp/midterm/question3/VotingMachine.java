@@ -6,19 +6,31 @@ import java.util.Map.Entry;
 public class VotingMachine {
 	private Map<String, Integer> votes;
 	
-	
-	/**
-	 * When a VotingMachine object is initialized, votes becomes a map with keys corresponding to the candidates passed and values initialized at 0
-	 * 
-	 * @param candidates is a list of the names of the candidates running
-	 */
-	public VotingMachine(List<String> candidates) {
+
+	public VotingMachine() {
 		votes = new HashMap<>();
-		for (String candidate : candidates) {
-			votes.put(candidate, 0);
-		}
 	}
 	
+	/**
+	 * This method adds a candidate to the map
+	 * 
+	 * @param c is the name of the candidate to be added
+	 * @return True if the operation completed, and False if the operation didn't
+	 */
+	public boolean addCandidate(String c) {
+		if (votes.containsKey(c)) {
+            return false;
+        }
+        votes.put(c, 0);
+        return true;
+	}
+	
+	/**
+	 * This method casts a vote for a candidate in the map
+	 * 
+	 * @param cName is the name of the candidate being voted for
+	 * @return true of the operation completed, and false otherwise
+	 */
 	public boolean castVote(String cName) {
 		if (votes.containsKey(cName)) {
 			votes.put(cName, votes.get(cName) + 1);
@@ -27,6 +39,10 @@ public class VotingMachine {
 		return false;
 	}
 	
+	/**
+	 * This class returns the person with the most votes with the ammount of votes they got
+	 * @return String containing the winnner and the points they got
+	 */
 	public String getWinner() { // https://stackoverflow.com/questions/46898/how-do-i-efficiently-iterate-over-each-entry-in-a-java-map
 		String winner = "";
 		int maxVotes = Integer.MIN_VALUE;
@@ -36,6 +52,6 @@ public class VotingMachine {
                 winner = candidate.getKey();
             }
 		}
-		return winner;
+		return "The winner is " + winner + " with " + votes.get(winner) + " points!";
 	}
 }
