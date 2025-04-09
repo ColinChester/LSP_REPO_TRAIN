@@ -2,6 +2,8 @@ package org.howard.edu.lsp.assignment5;
 
 import java.util.ArrayList;
 
+import assignment6.IntegerSet;
+
 public class Driver {
 	public static void main(String[] args) {
 		IntegerSet set1 = new IntegerSet();

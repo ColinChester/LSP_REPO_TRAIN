@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.assignment5;
+package assignment6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -163,7 +163,7 @@ public class IntegerSet {
 	 * @return true if this.set is empty
 	 * @return false if this.set is not empty
 	 */
-	boolean isEmpty() {
+	public boolean isEmpty() {
 		return this.set.isEmpty();
 	}; 
 	
