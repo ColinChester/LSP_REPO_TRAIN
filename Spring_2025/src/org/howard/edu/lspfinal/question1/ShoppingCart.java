@@ -71,7 +71,11 @@ public class ShoppingCart {
     public double getDiscountPercentage() {
         return discountPercentage;
     }
-    
+    /**
+     * Removes an item from the cart
+     * 
+     * @param itemName name of item to be deleted
+     */
     public void removeItem(String itemName) {
     	if (itemName.isEmpty() || !items.containsKey(itemName)) {
     		throw new IllegalArgumentException("Item not in cart.");
