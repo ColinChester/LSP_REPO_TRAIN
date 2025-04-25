@@ -2,7 +2,7 @@ package org.howard.edu.lsp.assignment5;
 
 import java.util.ArrayList;
 
-import assignment6.IntegerSet;
+import org.howard.edu.lsp.assignment6.IntegerSet;
 
 public class Driver {
 	public static void main(String[] args) {
